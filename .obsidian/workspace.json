@@ -1,0 +1,234 @@
+{
+  "main": {
+    "id": "e7b050d8e9d98935",
+    "type": "split",
+    "children": [
+      {
+        "id": "9e6f8dcf97ac78ca",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "069c5e141ef4a8e2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9ee935bc169c5ec9",
+    "type": "split",
+    "children": [
+      {
+        "id": "bc9c23f60854c5b7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8554084232a6284c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "143749b83e05f74c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "276b7d025956fee6",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "28a4141d83b196fd",
+    "type": "split",
+    "children": [
+      {
+        "id": "acbcfe66376dc2c6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "36a8342de9a3fd8d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "02-Algorithm/排序.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "排序 的反向链接列表"
+            }
+          },
+          {
+            "id": "80d3615a7b26d5af",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "02-Algorithm/排序.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "排序 的出链列表"
+            }
+          },
+          {
+            "id": "883edbf22b6689f7",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "512a829cfb9cf342",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "089df31f7867c103",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "README.md",
+                "followCursor": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "README 的大纲"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "069c5e141ef4a8e2",
+  "lastOpenFiles": [
+    "01-Dev/Backend/Java/JVM-03-垃圾回收.md",
+    "README.md",
+    "~建 Microsoft Excel 工作表.tmp",
+    "新建 Microsoft Excel 工作表.xlsx",
+    "新建 Text Document.txt",
+    "01-Dev/Backend/Java/JVM-02-类与对象.md",
+    "01-Dev/Backen/Java/垃圾回收.md",
+    "assets/并行垃圾回收器.png",
+    "assets/串行垃圾回收器.png",
+    "assets/CMS并发垃圾回收器.png",
+    "01-Dev/Backend/Java/JVM-01-组成.md",
+    "01-Dev/Backen/Java/类与对象.md",
+    "assets/逃逸分析.png",
+    "assets/JVM内存结构.md",
+    "01-Dev/Backen/Java/JVM-01-JVM组成.md",
+    "assets/JVM组成.png",
+    "assets/JVM内存结构.png",
+    "01-Dev/Backen/Java/JVM 组成.md",
+    "01-Dev/Backend/Java/JUC-03-线程池及适用场景.md",
+    "assets/CountDownLatch使用方法.png",
+    "assets/使用ThreadPoolExecutor.png",
+    "assets/Executors线程池.png",
+    "assets/线程池常见阻塞队列.png",
+    "01-Dev/Backend/Java/JUC-02-线程并发安全.md",
+    "01-Dev/Backend/Java/JUC-01-Java线程基础.md",
+    "05-TechReading/深入理解Java虚拟机.md",
+    "assets",
+    "assets",
+    "01-Dev/Backend/Java/Java集合.md",
+    "01-Dev/Backend/Java/JavaSE.md",
+    "01-Dev/Script/TypeScript-00-入门.md",
+    "01-Dev/Backend/Java",
+    "03-Algorithm/排序.md",
+    "02-MachineLearning",
+    "assets 1",
+    "04-TechReading/深入理解Java虚拟机/深入理解Java虚拟机.md",
+    "01-Dev/Script",
+    "01-Dev/Frontend",
+    "01-Dev/Agent/Langchain入门.md",
+    "未命名.canvas",
+    "OS与网络底层/C.md",
+    "并发编程/Java多线程.md",
+    "FishAgent/5.4.md",
+    "Agent/RAG.md",
+    "ai项目开发/ai多轮对话.md"
+  ]
+}
