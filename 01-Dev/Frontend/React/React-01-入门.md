@@ -39,3 +39,18 @@ function App() {
 
 **JSX中使用条件渲染**
 	可以通过 逻辑与 或 三元表达式 来使用条件渲染。
+
+## 2.React基础使用
+**React事件绑定**
+```js
+function App() {
+  const clickHandler = () => {
+    console.log('按钮被点击了');
+  }
+  return (
+    <div className="App">
+      <button onClick={clickHandler}>点击此按钮</button>
+    </div>
+  );
+}
+```
