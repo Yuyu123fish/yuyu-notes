@@ -17,7 +17,7 @@ _线程的`run()`和`start()`有什么区别？_
 - `run()`封装了要执行的代码，可以被调用多次。
 
 ## 线程包含哪些状态，状态之间如何变化
-![](assets/Java线程状态.png)
+![](../../../assets/Java线程状态.png)
 
 线程包含：NEW 新建，RUNNABLE 可运行，TERMINATED 死亡，BLOCKED 阻塞，WAITING 等待，TIMED_WAITING 计时等待。一共六个状态。
 

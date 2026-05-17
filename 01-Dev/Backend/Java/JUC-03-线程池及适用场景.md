@@ -1,6 +1,6 @@
 # 一.线程池的核心参数（执行原理）
 ## 1.线程池核心参数
-![](assets/线程池核心参数.png)
+![](../../../assets/线程池核心参数.png)
 - `corePoolSize`核心线程数
 - `maximumPoolSize`最大线程数 = 核心线程数 + 非核心线程数
 - `keepAliveTime`生存时间，当非核心线程在生存时间内没有新任务，那么线程资源会被释放
@@ -19,7 +19,7 @@
 - `DelayedWorkQueue`一种优先级队列，可以设置执行时间，执行时间靠前的先执行
 - `SynchronousQueue`不存储元素的队列，每次插入都必须等待一次移出操作
 `ArrayBlockingQueue`和`LinkedBlockingQueue`的区别：
-![](assets/线程池常见阻塞队列.png)
+![](../../../assets/线程池常见阻塞队列.png)
 ## 4.如何确定核心线程数
 - IO密集型任务：文件读写，DB读写，网络请求
 	- 核心线程数为2N+1
@@ -42,15 +42,16 @@
 - 适合任务数比较密集，但是每个任务执行时间比较短的情况
 4，`ScheduledThreadPool`提供了“延迟”和“周期执行”功能的ThreadPoolExecutor。
 ## 6.为什么不建议使用Executors创建？
-![](assets/Executors线程池.png)
-因为`Executors`创建的都是无界队列或者无限制的线程，那么堆积的任务或者线程多了之后，可能会导致OOM，所以使用`ThreadPoolExecutor`来明确每个参数是什么。![](assets/使用ThreadPoolExecutor.png)
+![](../../../assets/Executors线程池.png)
+因为`Executors`创建的都是无界队列或者无限制的线程，那么堆积的任务或者线程多了之后，可能会导致OOM，所以使用`ThreadPoolExecutor`来明确每个参数是什么。
+![](../../../assets/使用ThreadPoolExecutor.png)
 # 二.线程池使用场景
 ## 1.CountDownLatch
 `CountDownLatch`，闭锁/倒计时锁，用来进行线程同步协作，等待所有线程完成倒计时（一个线程或者多个线程等待其他多个线程完成某件事情后，才能继续执行）。
 - 构造参数初始化等待计数值
 - `await()`用来等待计数归零
 - `countDown()`用来让计数减一
-![](assets/CountDownLatch使用方法.png)
+![](../../../assets/CountDownLatch使用方法.png)
 ## 2.数据汇总
 实际开发的过程中，可能需要从多个接口拿到结果，如果我们串行执行，那么等待时间可能比较长，如果这些接口没有依赖关系，那么我们使用线程池+future来提升性能。
 ## 3.异步调用
@@ -82,4 +83,4 @@ _**内存泄漏问题**_
 - 对于自己创建的线程，由于线程执行结束后被销毁，其内部的`ThreadLocal`和`ThreadLocalMap`不再被强引用，于是可以被gc回收。
 - 对于线程池使用`ThreadLocal`，由于线程会反复使用，它的`key`是弱引用，而对应的`value`是强引用，当key被gc回收后，value却不能被回收，也无法抵达，那么造成了内存泄漏问题。
 - 所以直接在最后使用`remove()`方法清理掉，避免内存泄漏。
-![](assets/ThreadLocal内存泄漏.png)
+![](../../../assets/ThreadLocal内存泄漏.png)
