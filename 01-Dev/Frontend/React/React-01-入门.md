@@ -10,12 +10,13 @@ root.render(
 根组件`App.js`：
 具体流程是：`App` -> `index.js` ->  `public/index.html(root)`。
 # 二.JSX
+`JSX`是一种结合了`JavaScript`和`XML`的语法。
 ## 1.JSX相关基础语法
 **JSX中使用JS表达式**
 	在JSX中可以使用 **大括号语法{}** 识别JS中的表达式，比如常见变量，函数调用，方法调用。
 
 **JSX中进行循环遍历**
-	注意，这里使用`map`时必须绑定一个`key`（React内部标识字段，用于提升渲染性能）。
+	注意，这里使用`map`时**必须绑定**一个`key`（React内部标识字段，用于提升渲染性能）。
 ```js
 const list = [
   {id: 1, name: 'Vue'},
@@ -54,3 +55,101 @@ function App() {
   );
 }
 ```
+# 三.组件
+一个组件就是用户界面的一部分，它可以由自己的逻辑和外观，多个组件可以互相嵌套，也可以使用多次。
+组件内部存放了**逻辑**和**视图**。
+```js
+//函数组件
+function Button() {
+  return <button>点击此按钮</button>
+}
+//箭头函数组件
+const Button = () => {
+  return <button>点击此按钮</button>
+}
+
+function App() {
+  return (
+    <div className="App">
+      <Button />
+      <Button></Button>
+    </div>
+  );
+}
+```
+
+## 1.useState状态变量
+### 1.1.基本使用
+状态变量可以用来**同步显示**某些数值，它发生了变化之后，页面会立刻发生同步渲染。
+`const [count, setCount] = useState(初始值)`，`count`为我们设置的状态变量，`setCount`为设置`count`的函数，基本使用如下：
+```js
+import{useState} from 'react';
+function App(){
+  const [count, setCount] = useState(0);
+  function clickHandler(){
+    setCount(count + 1);
+  }
+  return (
+    <div>
+      <button onClick={clickHandler}>{count}</button>
+    </div>
+  )
+}
+export default App;
+```
+注意，只能使用其**回调函数**`setCount()`来设置新值，单纯的`count++`不可以进行赋值。
+
+### 1.2.修改对象状态
+对于对象的修改，使用**展开运算符**`...`然后选择要修改的属性进行修改，如下：
+```js
+import{useState} from 'react';
+function App(){
+  const [person, setPerson] = useState({name: 'Fish', age: 20});
+  function clickHandler(){
+    setPerson({...person, 
+      name: 'Duck',
+      age: person.age + 1});
+  }
+  return (
+    <div>
+      <button onClick={clickHandler}>
+        {person.name} is {person.age} years old
+      </button>
+    </div>
+  )
+}
+export default App;
+```
+
+## 2.组件基础样式
+React组件基础的样式控制有两种方式：行内样式（不推荐），class类名控制
+行内样式（不推荐）：
+```js
+const style = {
+  color: 'red',
+  fontSize: '20px'
+}
+<div style={{color : 'red'}}> this is div</div>
+```
+class类名控制：
+`index.css`
+```css
+.foo{
+    color: red;
+    font-size: 20px;
+}
+```
+`App.js`
+```js
+import './index.css'
+
+function App() {
+  return (
+    <div>
+      <span className='foo'> this is span </span>
+    </div>
+  )
+}
+```
+
+

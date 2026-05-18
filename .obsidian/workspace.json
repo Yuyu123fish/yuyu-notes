@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "dea58660e1bc9117",
+        "id": "c67c95fce19a0333",
         "type": "tabs",
         "children": [
           {
-            "id": "2acfed60dc4dfcff",
+            "id": "3a632a3d8cac0270",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-Dev/Backend/Java/JVM-02-类与对象.md",
+                "file": "01-Dev/Frontend/React/React-01-入门.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "JVM-02-类与对象"
+              "title": "React-01-入门"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01-Dev/Backend/Java/JVM-02-类与对象.md",
+                "file": "01-Dev/Frontend/React/React-01-入门.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "JVM-02-类与对象 的大纲"
+              "title": "React-01-入门 的大纲"
             }
           }
         ],
@@ -183,19 +183,24 @@
       "bases:新建数据库": false
     }
   },
-  "active": "2acfed60dc4dfcff",
+  "active": "3a632a3d8cac0270",
   "lastOpenFiles": [
-    "01-Dev/Backend/Java/JVM-01-组成.md",
-    "01-Dev/Backend/Java/JUC-03-线程池及适用场景.md",
-    "01-Dev/Backend/Java/JUC-02-线程并发安全.md",
-    "05-TechReading/深入理解Java虚拟机.md",
-    "01-Dev/Backend/Java/JUC-01-Java线程基础.md",
-    "01-Dev/Backend/Java/JavaSE.md",
-    "01-Dev/Frontend/React/React-01-入门.md",
     "01-Dev/Script/TypeScript-00-入门.md",
-    "01-Dev/Backend/Java/JVM-03-垃圾回收.md",
-    "01-Dev/Backend/Java/JVM-02-类与对象.md",
-    "01-Dev/Backend/Java/Java集合.md",
+    "01-Dev/Frontend/React/React-01-入门.md",
+    "01-Dev/Agent/Agent-00-基本知识.md",
+    "01-Dev/Agent/Agent-01-框架基本使用.md",
+    "01-Dev/Agent/Langchain入门.md",
+    "01-Dev/Code/Python",
+    "01-Dev/Code/Java/Java集合.md",
+    "01-Dev/Code/Java/JVM-02-类与对象.md",
+    "01-Dev/Code",
+    "01-Dev/Code/Java/JVM-01-组成.md",
+    "01-Dev/Code/Java/JUC-03-线程池及适用场景.md",
+    "01-Dev/Code/Java/JUC-02-线程并发安全.md",
+    "05-TechReading/深入理解Java虚拟机.md",
+    "01-Dev/Code/Java/JUC-01-Java线程基础.md",
+    "01-Dev/Code/Java/JavaSE.md",
+    "01-Dev/Code/Java/JVM-03-垃圾回收.md",
     "01-Dev/Frontend/React",
     "README.md",
     "~建 Microsoft Excel 工作表.tmp",
@@ -218,18 +223,14 @@
     "assets/线程池常见阻塞队列.png",
     "assets",
     "assets",
-    "01-Dev/Backend/Java",
+    "01-Dev/Code/Java",
     "03-Algorithm/01-排序.md",
     "02-MachineLearning",
-    "assets 1",
     "04-TechReading/深入理解Java虚拟机/深入理解Java虚拟机.md",
-    "01-Dev/Script",
-    "01-Dev/Agent/Langchain入门.md",
     "未命名.canvas",
     "OS与网络底层/C.md",
     "并发编程/Java多线程.md",
     "FishAgent/5.4.md",
-    "Agent/RAG.md",
-    "ai项目开发/ai多轮对话.md"
+    "Agent/RAG.md"
   ]
 }
