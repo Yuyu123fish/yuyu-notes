@@ -13,6 +13,7 @@
 ├── 01-Dev                # 开发相关笔记
 │   ├── Agent             # AI Agent 相关
 │   ├── Backend           # 后端开发
+|   ├── Code              # 语言
 │   ├── Frontend          # 前端开发
 │   └── Script            # 脚本语言与工程工具
 ├── 02-MachineLearning    # 机器学习相关
@@ -21,7 +22,7 @@
 ├── 05-TechReading        # 技术书籍阅读笔记
 ├── 06-Projects           # 项目复盘与工程实践
 ├── 07-Interview          # 面试与八股整理
-├── 08-Cards              # 知识卡片
+├── 08-Cards              # 知识卡片（快速记忆）
 ├── 09-Review             # 阶段复盘
 └── assets                # 图片与附件资源
 ```
