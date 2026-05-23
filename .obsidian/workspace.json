@@ -4,21 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "eb556f6fc20cb616",
+        "id": "8d9022c57b2ca5a1",
         "type": "tabs",
         "children": [
           {
-            "id": "6eed45a44409a846",
+            "id": "cb04fc09cd8defdd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-Dev/Backend/MySQL/MySQL-03-事务.md",
+                "file": "01-Dev/Backend/Redis/Redis-02-分布式与缓存.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MySQL-03-事务"
+              "title": "Redis-02-分布式与缓存"
+            }
+          },
+          {
+            "id": "017e2f5845db07a4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "other/05-八股.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "05-八股"
             }
           }
         ]
@@ -53,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#秒杀流程优化",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -156,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01-Dev/Backend/MySQL/MySQL-03-事务.md",
+                "file": "01-Dev/Backend/Redis/Redis-02-分布式与缓存.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "MySQL-03-事务 的大纲"
+              "title": "Redis-02-分布式与缓存 的大纲"
             }
           }
         ],
@@ -183,54 +197,54 @@
       "bases:新建数据库": false
     }
   },
-  "active": "8554084232a6284c",
+  "active": "cb04fc09cd8defdd",
   "lastOpenFiles": [
-    "01-Dev/Backend/MySQL/MySQL-02-索引.md",
+    "other/04-算法.md",
+    "01-Dev/Backend/Redis/Redis-01-底层.md",
+    "01-Dev/Backend/Redis/Redis-02-分布式与缓存.md",
     "01-Dev/Backend/MySQL/MySQL-03-事务.md",
+    "01-Dev/Backend/MySQL/MySQL-02-索引与优化.md",
+    "01-Dev/Backend/MySQL/MySQL-04-语句.md",
+    "01-Dev/Backend/ElasticSearch",
+    "01-Dev/Backend/MQ",
+    "01-Dev/Backend/Redis",
     "01-Dev/Backend/MySQL/MySQL-01-主从.md",
-    "01-Dev/Backend/MySQL",
+    "Pasted image 20260521170717.png",
+    "other/05-八股.md",
+    "01-Dev/Code/Java/JUC-01-Java线程基础.md",
+    "01-Dev/Code/Java/JavaSE.md",
+    "01-Dev/Code/Java/JUC-02-线程并发安全.md",
+    "01-Dev/Code/Java/Java集合.md",
+    "other/01-ByteDance-AI全栈-面试准备大纲.md",
+    "other/02-FishAgent项目复盘.md",
+    "other/03-黑马点评项目复盘.md",
+    "01-Dev/Code/Java/JVM-02-类与对象.md",
     "05-TechReading/Java-深入理解Java虚拟机.md",
+    "other/07-网络面经.md",
+    "other/06-AI工具.md",
+    "README.md",
+    "other",
+    "新建文件夹",
+    "06-Projects/Backend/yu-group-buying/未命名.md",
+    "06-Projects/Backend/yu-group-buying",
+    "06-Projects/Backend",
+    "01-Dev/Frontend/React/React-01-入门.md",
+    "01-Dev/Code/Cpp/Cpp-01-入门.md",
+    "01-Dev/Code/Cpp",
+    "01-Dev/Backend/MySQL",
     "01-Dev/Code/Java/JVM-03-垃圾回收.md",
     "08-Cards/Code/Java-Card.md",
-    "README.md",
-    "01-Dev/Code/Java/JVM-02-类与对象.md",
     "08-Cards/Code",
     "Pasted image 20260518154434.png",
-    "01-Dev/Code/Java/JUC-01-Java线程基础.md",
-    "01-Dev/Frontend/React/React-01-入门.md",
     "01-Dev/Script/TypeScript-01-入门.md",
-    "01-Dev/Agent/Agent-00-基本知识.md",
-    "01-Dev/Agent/Agent-01-框架基本使用.md",
-    "01-Dev/Agent/Langchain入门.md",
-    "01-Dev/Code/Python",
-    "01-Dev/Code/Java/Java集合.md",
-    "01-Dev/Code",
-    "01-Dev/Code/Java/JVM-01-组成.md",
-    "01-Dev/Code/Java/JUC-03-线程池及适用场景.md",
-    "01-Dev/Code/Java/JUC-02-线程并发安全.md",
-    "01-Dev/Code/Java/JavaSE.md",
-    "01-Dev/Frontend/React",
-    "~建 Microsoft Excel 工作表.tmp",
-    "新建 Microsoft Excel 工作表.xlsx",
-    "新建 Text Document.txt",
-    "01-Dev/Backen/Java/垃圾回收.md",
     "assets/并行垃圾回收器.png",
     "assets/串行垃圾回收器.png",
     "assets/CMS并发垃圾回收器.png",
-    "01-Dev/Backen/Java/类与对象.md",
     "assets/逃逸分析.png",
-    "assets/JVM内存结构.md",
-    "01-Dev/Backen/Java/JVM-01-JVM组成.md",
     "assets/JVM组成.png",
     "assets/JVM内存结构.png",
-    "01-Dev/Backen/Java/JVM 组成.md",
     "assets/CountDownLatch使用方法.png",
     "assets/使用ThreadPoolExecutor.png",
-    "assets/Executors线程池.png",
-    "assets",
-    "assets",
-    "03-Algorithm/01-排序.md",
-    "04-TechReading/深入理解Java虚拟机/深入理解Java虚拟机.md",
     "未命名.canvas"
   ]
 }

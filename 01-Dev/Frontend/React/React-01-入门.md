@@ -152,4 +152,69 @@ function App() {
 }
 ```
 
+## 3.受控表单绑定
+将输入框与`useState`状态变量进行双向绑定
+```js
+import{useState} from 'react';
+import './index.css';
 
+function App() {
+  const [person, setPerson] = useState({ name: 'Fish', age: 20 });
+
+  function handleChange(e) {
+    const { name, value } = e.target;//解构运算，name为标签里面的name属性，value为对应的文本
+    setPerson(prev => ({
+      ...prev,
+      [name]: name === 'age' ? Number(value) : value//name属性可能对应着'name'或'age'
+    }));
+  }
+
+  return (
+    <div>
+      <div>
+        <label>
+          Name:
+          <input
+            type="text"
+            name="name"
+            value={person.name}
+            onChange={handleChange}
+            className='foo'
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          Age:
+          <input
+            type="number"
+            name="age"
+            value={person.age}
+            onChange={handleChange}
+            className='foo'
+          />
+        </label>
+      </div>
+      <div>
+        {person.name} is {person.age} years old
+      </div>
+    </div>
+  );
+}
+
+export default App;
+```
+
+## 4.React中获取DOM
+在`React`组件中获取/操作DOM，需要使用`useRef`钩子函数，分为两步：
+1. 使用`useRef`创建`ref`对象，与`JSX`绑定。
+```js
+const inputRef = useRef(null)
+<input type='text' ref={inputRef} />
+```
+2. 在DOM可用时通过`inputRef.current`拿到DOM对象
+```js
+function handleClick() {
+  alert(inputRef.current.value);
+}
+```
