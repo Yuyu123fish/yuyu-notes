@@ -7,6 +7,17 @@ FishAgent 智能体
 - 知识库全链路闭环： 支持小文件直传与大文件分片上传，采用 Java落盘分发 + Python Worker异步消费 的解耦架构，执行“视觉 OCR 提取 → 文本分块 → 向量化 → ES 检索库”的解析流水线，并使用 Redis Stream 结合超时补偿定时任务彻底杜绝毒消息死循环；
 - Tool Calling 扩展机制： 基于 SPI 机制自主设计 AgentToolProvider 工具注册中心 + ToolRegistry 自动发现，通过 @ConditionalOnProperty 按配置懒装配；新增工具仅需建类加 @Component，实现零侵入动态扩展；
 
+# 追问
+## 1.智能体多节点部署考虑哪些问题？
+- **接入层**：
+	- 使用Nginx做**反向代理和负载均衡**，请求来了先根据用户ip或者用户的token做hash处理，这里使用对用户的**token做哈希处理**，因为用户的ip可能会变化，所以基于token做负载均衡效果更好。
+	- 对于打到Nginx的请求，也可以对Nginx做负载均衡，**开启多个Nginx节点**，最初的Nginx只负责分发请求到不同的Nginx，后面的Nginx负责做哈希运算分发请求到不同的后端节点。
+- **后端多实例与无状态化**：
+	- 后端需要引入新的依赖检查Nginx和Docker容器是否存活。
+	- 不能把**用户上下文、短期记忆、任务状态**只放在某个 JVM 内存里。否则请求打到不同节点就会出现状态不一致，节点挂了也无法恢复。所以要把**关键状态外置**，比如短期记忆放 Redis，对话记录放 MySQL 或对象存储，Agent run 的状态用 `taskId/runId` 记录
+- **基础组件高可用**：Redis 可以用主从哨兵，或者**分片集群模式**；MySQL 如果存核心业务数据，也要考虑**主从、备份和故障恢复**；**对象存储也要避免单点**。否则后端节点虽然扩容了，但 Redis/MySQL 挂了，整个系统还是不可用。
+- **日志分散**：给实例加上实例标识，打印在日志里面。
+
 # 自主规划智能体
 基于 ReactAgent 构建「思考-行动-观察」多步骤自主推理循环；针对大模型易陷入死循环的痛点，引入图节点切换硬上限、ModelCallLimitHook 优雅终止及原子状态机三重防死循环机制，保障系统高可用。
 
@@ -77,7 +88,7 @@ RustFsChatMemoryStore 的写操作会抛异常（IllegalStateException），但 
 
 然后本身我们的查库过程是一个**IO密集型过程**，所以可以使用JAVA21提供的虚拟线程来完成，虚拟线程是用户态的轻量级线程，由jvm管理，一个实际的线程可以挂载非常多个轻量级线程，非常适合做IO密集型任务，所以这里也使用了虚拟线程。
 
-那么再后来遇到的一个比较严重的问题是，我们的用户id信息是存在`ThreadLocal`也就是主线程里面的，他和虚拟线程是数据隔离的，也就是虚拟线程是拿不到我们主线程里面的用户信息的，所以这里就需要对每个虚拟线程做了一次`ThreadLocal`的快照回放，那么就解决了用户信息丢失的问题。
+那么再后来遇到的一个**比较严重的问题**是，我们的用户id信息是存在`ThreadLocal`也就是主线程里面的，他和虚拟线程是数据隔离的，也就是虚拟线程是拿不到我们主线程里面的用户信息的，所以这里就需要对每个虚拟线程做了一次`ThreadLocal`的快照回放，那么就解决了用户信息丢失的问题。
 
 然后就是进行**合并后去重**，再按**照分数排序**，截取**top8**的数据再注入到系统提示词中。
 
@@ -89,7 +100,7 @@ RustFsChatMemoryStore 的写操作会抛异常（IllegalStateException），但 
 2. 12 个并发 ES 查询，性能扛得住吗？有没有做限流？
 	- 虚拟线程池有固定大小（ragRecallExecutor），天然限流
 	- 每个子查询的 perSubquerySize=5，单次返回量可控
-	- 任何一路失败都 catch 返回空列表，不影响其他路
+	- 任何一路**失败都 catch 返回空列表**，不影响其他路
 **3.查询重写的 ChatModel 和对话的 ChatModel 是同一个吗？**
 是的，用的是容器内 @Primary 的 ChatModel，但温度调到了 0.1，并且通过严格 JSON 指令约束不让它"抢答"。
 **4.为什么文本路按子查询检索，向量路只用完整句？**
@@ -144,14 +155,14 @@ safeTextSearch / safeVectorSearch 里 catch 异常返回空列表，不影响其
   POST /api/knowledge/upload/init
   Body: { fileName, fileSize, contentType }
   后端只做两件事：
-  - 生成 taskId + minioPath
-  - MySQL INSERT (status=PENDING)
+  - **生成 taskId + minioPath**
+  - **MySQL INSERT (status=PENDING)**
   不写文件、不发 Stream。返回 { taskId, uploadId, minioPath } 给前端。
-  阶段二：逐片上传（循环）
+  阶段二：**逐片上传（循环）**
   POST /api/knowledge/upload/chunk  (multipart/form-data)
   Params: taskId, uploadId, minioPath, partNumber
   Body: chunk=xxx
-  每个分片写入 RustFS 的 staging 临时路径：
+  每个分片写入 RustFS 的 **staging 临时路径**：
   staging/{taskId}/1
   staging/{taskId}/2
   staging/{taskId}/3
@@ -161,10 +172,10 @@ safeTextSearch / safeVectorSearch 里 catch 异常返回空列表，不影响其
   Body: { taskId, uploadId, minioPath, parts: [{partNumber, etag}, ...] }
   后端执行：
   1. RustFS.composeDocObject([staging/{taskId}/1, staging/{taskId}/2, ...], minioPath)
-     → 把所有分片合并成最终文件
-  2. 清理 staging 目录
-  3. Redis XADD fish:doc:ingest {task_id, minio_path, ...}
-     → 投递 Stream，后续流程和直传一样
+     → 把所有**分片合并**成最终文件
+  2. **清理 staging 目录**
+  3. **Redis XADD** fish:doc:ingest {task_id, minio_path, ...}
+     → **投递 Stream**，后续流程和直传一样
   4. 返回 { taskId }
   如果合并失败 → 标记 FAILED + 清理 staging。如果 Stream 投递失败 → 标记 FAILED + 删除最终文件。
   还有一个取消接口 POST /api/knowledge/upload/abort，前端可以主动取消上传 → 清理 staging + 标记 FAILED。

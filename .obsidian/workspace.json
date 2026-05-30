@@ -4,35 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8d9022c57b2ca5a1",
+        "id": "65fd3c18e066f899",
         "type": "tabs",
         "children": [
           {
-            "id": "cb04fc09cd8defdd",
+            "id": "c77c260dd860f8fb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-Dev/Backend/Redis/Redis-02-分布式与缓存.md",
+                "file": "other/04-算法.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Redis-02-分布式与缓存"
-            }
-          },
-          {
-            "id": "017e2f5845db07a4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "other/05-八股.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "05-八股"
+              "title": "04-算法"
             }
           }
         ]
@@ -170,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01-Dev/Backend/Redis/Redis-02-分布式与缓存.md",
+                "file": "other/04-算法.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Redis-02-分布式与缓存 的大纲"
+              "title": "04-算法 的大纲"
             }
           }
         ],
@@ -197,54 +183,54 @@
       "bases:新建数据库": false
     }
   },
-  "active": "cb04fc09cd8defdd",
+  "active": "c77c260dd860f8fb",
   "lastOpenFiles": [
+    "07-Interview/2026/05-28-阿里巴巴控股一面-基础平台研发.md",
+    "07-Interview/2026/05-27-字节抖音一面-AI全栈开发.md",
+    "01-Dev/Agent/Agent-03-记忆与RAG.md",
+    "07-Interview/2026/05-26-虾皮一面-Data Infra大数据平台研发.md",
     "other/04-算法.md",
-    "01-Dev/Backend/Redis/Redis-01-底层.md",
+    "03-Algorithm/01-排序.md",
+    "01-Dev/Agent/Agent-01-范式.md",
+    "01-Dev/Backend/MQ/RabbitMQ.md",
+    "other/03-黑马点评项目复盘.md",
+    "other/02-FishAgent项目复盘.md",
+    "04-CSBase/OS/操作系统-04-网络IO.md",
+    "01-Dev/Backend/Redis/Redis-04-高可用与集群.md",
+    "01-Dev/Backend/Redis/Redis-03-持久化机制.md",
     "01-Dev/Backend/Redis/Redis-02-分布式与缓存.md",
+    "01-Dev/Backend/Redis/Redis-01-底层.md",
+    "01-Dev/Backend/MySQL/MySQL-04-语句.md",
     "01-Dev/Backend/MySQL/MySQL-03-事务.md",
     "01-Dev/Backend/MySQL/MySQL-02-索引与优化.md",
-    "01-Dev/Backend/MySQL/MySQL-04-语句.md",
+    "01-Dev/Backend/MySQL/MySQL-01-主从.md",
+    "01-Dev/Code/Java/JUC-02-线程并发安全.md",
+    "01-Dev/Agent/Agent-02-智能体与LLM设计.md",
+    "01-Dev/Code/Java/JavaSE.md",
+    "04-CSBase/Network/网络-02-应用层.md",
+    "04-CSBase/OS/操作系统-03-内存管理.md",
+    "01-Dev/Agent/Agent-00-基本知识.md",
+    "01-Dev/Code/Java/JVM-01-组成.md",
+    "07-Interview/2026",
+    "assets/SpringMVC执行流程.png",
+    "assets/Spring相关注解.png",
+    "assets/SpringMVC相关注解.png",
+    "assets/SpringBoot相关注解.png",
+    "01-Dev/Backend/JavaWeb",
+    "04-CSBase/OS",
+    "04-CSBase/Network",
     "01-Dev/Backend/ElasticSearch",
     "01-Dev/Backend/MQ",
     "01-Dev/Backend/Redis",
-    "01-Dev/Backend/MySQL/MySQL-01-主从.md",
     "Pasted image 20260521170717.png",
-    "other/05-八股.md",
-    "01-Dev/Code/Java/JUC-01-Java线程基础.md",
-    "01-Dev/Code/Java/JavaSE.md",
-    "01-Dev/Code/Java/JUC-02-线程并发安全.md",
-    "01-Dev/Code/Java/Java集合.md",
-    "other/01-ByteDance-AI全栈-面试准备大纲.md",
-    "other/02-FishAgent项目复盘.md",
-    "other/03-黑马点评项目复盘.md",
-    "01-Dev/Code/Java/JVM-02-类与对象.md",
-    "05-TechReading/Java-深入理解Java虚拟机.md",
-    "other/07-网络面经.md",
-    "other/06-AI工具.md",
-    "README.md",
     "other",
     "新建文件夹",
-    "06-Projects/Backend/yu-group-buying/未命名.md",
     "06-Projects/Backend/yu-group-buying",
-    "06-Projects/Backend",
-    "01-Dev/Frontend/React/React-01-入门.md",
-    "01-Dev/Code/Cpp/Cpp-01-入门.md",
-    "01-Dev/Code/Cpp",
-    "01-Dev/Backend/MySQL",
-    "01-Dev/Code/Java/JVM-03-垃圾回收.md",
-    "08-Cards/Code/Java-Card.md",
-    "08-Cards/Code",
     "Pasted image 20260518154434.png",
-    "01-Dev/Script/TypeScript-01-入门.md",
     "assets/并行垃圾回收器.png",
     "assets/串行垃圾回收器.png",
     "assets/CMS并发垃圾回收器.png",
     "assets/逃逸分析.png",
-    "assets/JVM组成.png",
-    "assets/JVM内存结构.png",
-    "assets/CountDownLatch使用方法.png",
-    "assets/使用ThreadPoolExecutor.png",
     "未命名.canvas"
   ]
 }
